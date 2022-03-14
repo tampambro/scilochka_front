@@ -1,0 +1,39 @@
+/* Fonts */
+@font-face {
+	font-family: "main-regular";
+	src: url(./fonts/RobotoMono-Regular.woff) format('woff');
+	src: url(./fonts/RobotoMono-Regular.woff2) format('woff2');
+	src: url(./fonts/RobotoMono-Regular.ttf) format('truetype');
+	font-style: normal;
+	font-weight: normal;
+}
+/* _____ */
+
+:root {
+	box-sizing: border-box;
+
+	/* colors */
+	--main-blue: rgba(67, 142, 217, 1);
+	--main-color-separate: black;
+	--text-in-separate: rgba(255,255,255,.75);
+}
+
+*,
+::before,
+::after {
+	box-sizing: inherit;
+}
+
+html, body {
+	background-color: var;
+	font-family: "main-regular";
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 8px;
+}
+
