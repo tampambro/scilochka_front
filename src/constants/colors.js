@@ -1,1 +1,0 @@
-export const MAIN_BLUE = 'rgba(67, 142, 217, 1)';

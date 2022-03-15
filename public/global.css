@@ -14,14 +14,18 @@
 
 	/* colors */
 	--main-blue: rgba(67, 142, 217, 1);
+	--transparent-blue: rgba(67, 142, 217, .3);
 	--main-color-separate: black;
 	--text-in-separate: rgba(255,255,255,.75);
+	--main-pink: rgb(167, 81, 248);
+	--transparent-pink: rgba(167, 81, 248, .3);;
 }
 
 *,
 ::before,
 ::after {
 	box-sizing: inherit;
+	outline: none;
 }
 
 html, body {
@@ -37,3 +41,41 @@ body {
 	padding: 8px;
 }
 
+a {
+	text-decoration: none;;
+}
+
+p {
+	margin: 0;
+}
+
+pre {
+	margin: 0;
+}
+
+.focus-elem.pink:focus {
+	border-color: transparent !important;
+	background: var(--transparent-pink);
+}
+
+.focus-elem.blue:focus {
+	border-color: transparent !important;
+	background: var(--transparent-blue);
+}
+
+.common-btn {
+	border: 4px solid var(--main-color-separate);
+	background: var(--main-color-separate);
+	color: var(--text-in-separate);
+	font-size: 1.4em;
+	transition: border .3s;
+}
+
+.common-btn:hover {
+	border: 4px solid var(--main-blue);
+}
+
+.common-btn:active {
+	color: var(--main-pink);
+	border: 4px solid var(--main-pink);
+}
