@@ -4,7 +4,7 @@
 	import { clickOutside } from '../functions/click_outside';
 
   function closeMenu(): void {
-    isSideMenuActive.update((isActive) => isActive = false);
+    isSideMenuActive.set(false);
   }
 
   function linkHandler(event: Event): void {
@@ -24,19 +24,21 @@
   on:click={linkHandler}
 >
   <nav class="side-menu_nav">
-    <a class="side-menu_link" href="/create" use:link>Создать сцылочку</a>
-    <a class="side-menu_link" href="/archive" use:link>Архив</a>
+    <a class="side-menu_link underline-link" href="/create" use:link>Создать сцылочку</a>
+    <a class="side-menu_link underline-link" href="/archive" use:link>Архив</a>
   </nav>
 
-  <!-- <div class="help">
-    <p class="help__header">Горячии клавиши</p>
+  <div class="help">
+    <p class="help__header">Подсказки</p>
     <div class="help_action">
-      <p class="help_action_title">Создать подзаголовок:</p>
-      <pre>
-        ctrl + alt → h
-      </pre>
+      <p class="help_action_title">Создание сцылочки:</p>
+      <ul class="help_text">
+        <li>заголовок обязателен для заполнения;</li>
+        <li>лимит для заголовка - 200 символов;</li>
+        <li>лимит для основной части - 5000 символов.</li>
+      </ul>
     </div>
-  </div> -->
+  </div>
 
   <footer class="side-menu-footer">
     <a href="mailto:scilochka@yandex.ru">Баг-репорт</a>
@@ -54,7 +56,7 @@
     color: var(--text-in-separate);
     top: 0;
     left: 0;
-    padding: 8px 0 0 8px;
+    padding: 8px 8px 0 8px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -77,7 +79,6 @@
   }
 
   .side-menu_link {
-    position: relative;
     align-self: start;
     margin-bottom: 10px;
   }
@@ -86,23 +87,11 @@
     color: var(--main-pink);
   }
 
-  .side-menu_link::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    background: var(--main-blue);
-    width: 100%;
-    height: 1.5px;
-    transition: all .3s;
-  }
-
-  .side-menu_link:hover::after {
-    background: var(--main-pink);
-  }
-
-  .help_action pre {
+  .help_text {
     color: var(--main-pink);
+    font-size: 0.7rem;
+    padding-inline-start: 25px;
+    list-style-type: square;
   }
 
   .side-menu-footer {

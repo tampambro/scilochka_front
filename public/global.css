@@ -18,7 +18,11 @@
 	--main-color-separate: black;
 	--text-in-separate: rgba(255,255,255,.75);
 	--main-pink: rgb(167, 81, 248);
-	--transparent-pink: rgba(167, 81, 248, .3);;
+	--transparent-pink: rgba(167, 81, 248, .3);
+	--success-green: #73AF55;
+	--fail-red: #D06079;
+	--warning-yellow: #ffeb3b;
+	--main-font-color: black;
 }
 
 *,
@@ -29,7 +33,7 @@
 }
 
 html, body {
-	background-color: var;
+	color: var(--main-font-color);
 	font-family: "main-regular";
 	position: relative;
 	width: 100%;
@@ -42,7 +46,24 @@ body {
 }
 
 a {
+	position: relative;
+	color: var(--main-font-color);
 	text-decoration: none;;
+}
+
+.underline-link::after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	background: var(--main-blue);
+	width: 100%;
+	height: 1.5px;
+	transition: all .3s;
+}
+
+.underline-link:hover::after {
+	background: var(--main-pink);
 }
 
 p {
@@ -51,6 +72,13 @@ p {
 
 pre {
 	margin: 0;
+}
+
+hr {
+	border: 2px solid var(--main-blue);
+	background: var(--main-blue);
+	border-radius: 5px;
+	margin: 8px 0 16px;
 }
 
 .focus-elem.pink:focus {
@@ -78,4 +106,17 @@ pre {
 .common-btn:active {
 	color: var(--main-pink);
 	border: 4px solid var(--main-pink);
+}
+
+.overall-wrapper {
+	width: 100%;
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.inner-wrapper {
+	width: 700px;
+	margin: 0 auto;
+	padding: 50px 50px;
 }

@@ -2,7 +2,7 @@
   import { isSideMenuActive } from '../stores';
 
   function openSideMenu(): void {
-    isSideMenuActive.update((isActive: boolean) => isActive = true);
+    isSideMenuActive.set(true);
   }
 </script>
 
