@@ -9,8 +9,16 @@
 	import Scilochka from './components/Scilochka.svelte';
 	import Alert from './components/Alert.svelte';
 	import Archive from './components/Archive.svelte';
-import About from './components/About.svelte';
+	import About from './components/About.svelte';
 	//-------
+
+	import handleGesture from './functions/handle-gesture';
+	import detectMobile from './functions/detect-mobile';
+
+	if (detectMobile()) {
+		document.addEventListener('touchstart', handleGesture);
+		document.addEventListener('touchend', handleGesture);
+	}
 
 </script>
 

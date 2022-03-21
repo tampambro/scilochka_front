@@ -8,6 +8,8 @@
 
   import { scilochkaCash } from '../stores';
 
+  import Logo from './Logo.svelte';
+
   export let id: number;
 
   let data: ScilochkaData;
@@ -54,6 +56,7 @@
 
     if (cash) {
       data = cash;
+      date = time_formatting(cash.date);
       isFetchEnd = true;
       return;
     }
@@ -66,11 +69,12 @@
 
 <main class="overall-wrapper">
 
+  <Logo />
+
   {#if isFetchEnd}
     {#if date}
       <p class="scilochka-date">Создано: <br /> { date?.date } <br /> { date?.time }</p>
     {/if}
-
     <div class="inner-wrapper">
 
       <h1 class="scilochka_header">{ data?.title }</h1>
@@ -106,5 +110,8 @@
   .scilochka-date {
     font-size: 0.8em;
     text-align: end;
+    position: absolute;
+    top: 8px;
+    right: 8px;
   }
 </style>

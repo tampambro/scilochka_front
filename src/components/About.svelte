@@ -1,4 +1,10 @@
+<script lang="ts">
+  import Logo from './Logo.svelte';
+
+</script>
 <main class="overall-wrapper">
+
+  <Logo />
 
   <div class="inner-wrapper">
     <h1>Scilochka</h1>

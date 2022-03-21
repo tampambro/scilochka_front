@@ -14,6 +14,7 @@
       closeMenu()
     }
   }
+
 </script>
 
 <div
@@ -41,7 +42,7 @@
   </div>
 
   <footer class="side-menu-footer">
-    <a href="mailto:scilochka@yandex.ru">Баг-репорт</a>
+    <a href="mailto:scilochka@yandex.ru">e-mail</a>
     <a href="/about" use:link>О сайте</a>
   </footer>
 </div>
@@ -99,6 +100,8 @@
     height: 50px;
     display: flex;
     padding: 8px 0 0 8px;
+    width: calc(100% + 16px);
+    margin-left: -8px;
   }
 
   .side-menu-footer a {

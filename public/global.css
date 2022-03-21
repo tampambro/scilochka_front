@@ -15,10 +15,12 @@
 	/* colors */
 	--main-blue: rgba(67, 142, 217, 1);
 	--transparent-blue: rgba(67, 142, 217, .3);
+	--blue: rgba(67, 142, 217, 1);
 	--main-color-separate: black;
 	--text-in-separate: rgba(255,255,255,.75);
 	--main-pink: rgb(167, 81, 248);
 	--transparent-pink: rgba(167, 81, 248, .3);
+	--pink: rgba(167, 81, 248, 1);
 	--success-green: #73AF55;
 	--fail-red: #D06079;
 	--warning-yellow: #ffeb3b;
@@ -97,6 +99,7 @@ hr {
 	color: var(--text-in-separate);
 	font-size: 1.4em;
 	transition: border .3s;
+	height: 40px;
 }
 
 .common-btn:hover {
@@ -118,5 +121,18 @@ hr {
 .inner-wrapper {
 	width: 700px;
 	margin: 0 auto;
-	padding: 50px 50px;
+	padding: 80px 50px;
+}
+
+.svg-wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 545px) {
+	.inner-wrapper {
+		width: 100%;
+		padding: 50px 10px;
+	}
 }
