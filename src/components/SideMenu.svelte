@@ -24,6 +24,11 @@
   on:outclick={closeMenu}
   on:click={linkHandler}
 >
+  <footer class="side-menu-footer">
+    <a href="mailto:scilochka@yandex.ru">e-mail</a>
+    <a class="footer-link" href="/about" use:link>О сайте</a>
+  </footer>
+
   <nav class="side-menu_nav">
     <a class="side-menu_link underline-link" href="/create" use:link>Создать сцылочку</a>
     <a class="side-menu_link underline-link" href="/archive" use:link>Архив</a>
@@ -47,11 +52,6 @@
       </ul>
     </div>
   </div>
-
-  <footer class="side-menu-footer">
-    <a href="mailto:scilochka@yandex.ru">e-mail</a>
-    <a class="footer-link" href="/about" use:link>О сайте</a>
-  </footer>
 </div>
 
 <style>
@@ -59,7 +59,7 @@
     z-index: 1;
     position: fixed;
     width: 300px;
-    height: 100vh;
+    height: 100%;
     background: var(--main-color-separate);
     color: var(--text-in-separate);
     top: 0;
@@ -69,7 +69,7 @@
     flex-direction: column;
     justify-content: space-between;
     left: -300px;
-    transition: left .3s;
+    transition: left .3s, height .1s;
   }
 
   .side-menu_wrapper.active {
@@ -89,6 +89,7 @@
   .side-menu_link {
     align-self: start;
     margin-bottom: 10px;
+    font-size: 1.3rem;
   }
 
   .side-menu_link:active {
@@ -103,7 +104,7 @@
   }
 
   .side-menu-footer {
-    border-top: 3px solid var(--main-blue);
+    border-bottom: 3px solid var(--main-blue);
     height: 50px;
     display: flex;
     padding: 8px 0 0 8px;
@@ -126,5 +127,11 @@
 
   .help_action_title {
     font-size: 0.8rem;
+  }
+
+  @media (max-width: 545px) {
+    .side-menu-footer {
+      height: 40px;
+    }
   }
 </style>

@@ -2,6 +2,7 @@
   import Logo from './Logo.svelte';
 
 </script>
+
 <main class="overall-wrapper">
 
   <Logo />

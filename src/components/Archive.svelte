@@ -13,6 +13,26 @@
 
   const navigate: NavigateFn = useNavigate();
   let archive: ScilochkaData[] = [];
+//   let archive: ScilochkaData[] = [
+//     {
+//         "content": "test_content",
+//         "date": "Fri, 18 Mar 2022 13:24:29 GMT",
+//         "id": 1,
+//         "title": "test_title sрвоаылв джд"
+//     },
+//     {
+//         "content": "as",
+//         "date": "Sat, 19 Mar 2022 00:53:19 GMT",
+//         "id": 2,
+//         "title": "asd"
+//     },
+//     {
+//         "content": "test 3",
+//         "date": "Fri, 18 Mar 2022 22:19:26 GMT",
+//         "id": 3,
+//         "title": "test 3"
+//     }
+// ];
 
   function showScilochky(event: Event): void {
     const index: number = +(event.target as HTMLElement).dataset.index;
@@ -92,7 +112,7 @@
             <td>{ scilochka.id }</td>
             <td>
               <a
-                class="tabel-link underline-link"
+                class="tabel-link"
                 href={ '/scilochka/' + scilochka.id }
                 on:click|preventDefault={showScilochky}
                 data-index={ index }
@@ -200,6 +220,18 @@
 
   #refresh-archive-btn .svg-wrap {
     display: none;
+  }
+
+  .tabel-link {
+    text-decoration: solid underline var(--blue) 2px;
+    text-underline-offset: 4px;
+    transition: all .3s;
+    word-break: break-word;
+    line-height: 1.5;
+  }
+
+  .tabel-link:hover {
+    text-decoration: solid underline var(--pink) 3px;
   }
 
   @media (max-width: 580px) {

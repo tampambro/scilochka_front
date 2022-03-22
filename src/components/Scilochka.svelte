@@ -67,7 +67,6 @@
     getScilochka();
   });
 
-
 </script>
 
 <main class="overall-wrapper">
@@ -76,7 +75,7 @@
 
   {#if isFetchEnd}
     {#if date}
-      <p class="scilochka-date">Создано: <br /> { date?.date } <br /> { date?.time }</p>
+      <p class="scilochka-date"><span>Создано: <br /></span>  { date?.date } <br /> { date?.time }</p>
     {/if}
     <div class="inner-wrapper">
 
@@ -116,5 +115,23 @@
     position: absolute;
     top: 8px;
     right: 8px;
+  }
+
+  @media (max-width: 545px) {
+    .scilochka-date {
+      color: var(--text-in-separate);
+      font-size: 2.5vw;
+    }
+
+    .scilochka-date span {
+      display: none;
+      font-size: 2.6vw;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .scilochka-date {
+      font-size: 0.6rem;
+    }
   }
 </style>
