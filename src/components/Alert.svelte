@@ -96,7 +96,9 @@
 
   .alert_img-wrap {
     min-width: 60px;
+    max-width: 60px;
     min-height: 60px;
+    max-height: 60px;
     margin-right: 20px;
   }
 

@@ -12,26 +12,7 @@
   import Logo from './Logo.svelte';
 
   const navigate: NavigateFn = useNavigate();
-  let archive: ScilochkaData[] = [
-    {
-        "content": "test_content",
-        "date": "Fri, 18 Mar 2022 13:24:29 GMT",
-        "id": 1,
-        "title": "test_title"
-    },
-    {
-        "content": "as",
-        "date": "Sat, 19 Mar 2022 00:53:19 GMT",
-        "id": 2,
-        "title": "asd"
-    },
-    {
-        "content": "test 3",
-        "date": "Fri, 18 Mar 2022 22:19:26 GMT",
-        "id": 3,
-        "title": "test 3"
-    }
-];
+  let archive: ScilochkaData[] = [];
 
   function showScilochky(event: Event): void {
     const index: number = +(event.target as HTMLElement).dataset.index;

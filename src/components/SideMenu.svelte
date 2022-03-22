@@ -10,7 +10,7 @@
   function linkHandler(event: Event): void {
     const target = event.target as HTMLElement;
 
-    if (target.classList.contains('side-menu_link')) {
+    if (target.classList.contains('side-menu_link') || target.classList.contains('footer-link')) {
       closeMenu()
     }
   }
@@ -39,11 +39,18 @@
         <li>лимит для основной части - 5000 символов.</li>
       </ul>
     </div>
+
+    <div class="help_action">
+      <p class="help_action_title">Просмотр архива:</p>
+      <ul class="help_text">
+        <li>Если вы создали сцылочку, но не видите её а архиве, нажмите кнопку "обновить"</li>
+      </ul>
+    </div>
   </div>
 
   <footer class="side-menu-footer">
     <a href="mailto:scilochka@yandex.ru">e-mail</a>
-    <a href="/about" use:link>О сайте</a>
+    <a class="footer-link" href="/about" use:link>О сайте</a>
   </footer>
 </div>
 

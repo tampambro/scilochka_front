@@ -7,6 +7,7 @@
   import { get } from 'svelte/store';
 
   import { scilochkaCash } from '../stores';
+  import { newScilochkaNumber } from '../stores';
 
   import Logo from './Logo.svelte';
 
@@ -54,11 +55,13 @@
   onMount(() => {
     const cash: ScilochkaData = get(scilochkaCash);
 
-    if (cash) {
+    if (cash && !get(newScilochkaNumber)) {
       data = cash;
       date = time_formatting(cash.date);
       isFetchEnd = true;
       return;
+    } else if (get(newScilochkaNumber)) {
+      newScilochkaNumber.set(0);
     }
 
     getScilochka();

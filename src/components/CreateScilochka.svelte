@@ -7,6 +7,8 @@
 
   import Logo from './Logo.svelte';
 
+  import { newScilochkaNumber } from '../stores';
+
   const navigate = useNavigate();
   let headerVal: string = '';
   let contentVal: string = '';
@@ -62,7 +64,9 @@
       if (json.success === 'true') {
         alertCall('Сцылочка создана.', true);
 
-        navigate(`/scilochka/${json.scilochka_id}`)
+        newScilochkaNumber.set(json.scilochka_id);
+
+        navigate(`/scilochka/${json.scilochka_id}`);
       } else {
         alertCall('Не удалось создать сцылочку.', false);
       }
@@ -76,7 +80,15 @@
   onMount(() => {
     autoTextareaResize(document.querySelectorAll('.create-content'));
 
-    (document.querySelector('.create-header') as HTMLElement).focus();
+    const header = (document.querySelector('.create-header') as HTMLElement);
+
+    const userAgent: string = navigator.userAgent;
+    if (userAgent.match(/firefox|fxios/i)) {
+      header.style.display = 'block';
+    }
+
+    header.focus();
+
   });
 
 </script>
@@ -103,6 +115,7 @@
   <div class="inner-wrapper">
 
     <h1 class="create-header focus-elem pink" contenteditable="true" on:input={headerValHandler}> </h1>
+
     <p class="character-counter header">{ headerCounter }/200</p>
     <hr />
 
@@ -121,6 +134,7 @@
     transition: all .3s;
     display: inline-block;
     padding: 8px;
+    word-break: break-word;
   }
 
   .create-content {

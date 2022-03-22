@@ -10,3 +10,5 @@ export const isAlertActive: Writable<boolean> = writable(false);
 
 export const archiveCash: Writable<ScilockaDate[]> = writable([]);
 export const scilochkaCash: Writable<ScilockaDate> = writable();
+
+export const newScilochkaNumber: Writable<number> = writable(0);
